@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Alm brand</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.js">
     </script>
 
@@ -23,7 +25,8 @@
         * {
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
+            font-family: 'Work Sans', sans-serif;
+
         }
 
 /*Nav*/
@@ -50,12 +53,12 @@
             height: 100vh;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
 
         }
 
         .beregner {
-            grid-row: span 2;
+            grid-row: span 3;
             background-color: var(--moerkeblaa);
             max-width: 100%;
             margin-bottom: 50px;
@@ -83,7 +86,7 @@
             width: 25px;
             border-radius: 50%;
             border: 2px solid var(--almbrandlys);
-            background: var(--almbrandmid);
+            background: var(--lyseblaa);
             cursor: pointer;
             margin-top: -6px;
             box-shadow: inset 0px 1px 3px rgba(0,0,0,0.9);
@@ -133,6 +136,18 @@
         .beregner_h1 {
             color: white;
             text-align: center;
+            font-family: Georgia, serif;
+            font-size: 8.5vw;
+            font-weight: 100;
+            font-size: 3.5em;
+
+        }
+
+        .dit_laan {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: 200;
+            color: var(--lyseblaa);
         }
 
         label {
@@ -140,12 +155,28 @@
         }
 
         .beregner_info{
+            display: flex;
+            justify-content: space-between;
             color: white;
+            font-size: 0.9em;
+            margin: 5px 0;
         }
 
         .beregner_row {
             max-width: 80%;
             margin: 10px auto;
+        }
+
+        .beregner_row3 {
+            margin-top: 20px;
+        }
+        .beregner_info {
+            margin: 25px 0;
+        }
+
+        .beregner_row label {
+            display: flex;
+            justify-content: space-between;
         }
 
 
@@ -165,7 +196,7 @@
 
         .boksemne {
             font-size: 1.7em;
-            font-family: serif;
+            font-family: Georgia,serif;
         }
 
         .boks p {
@@ -193,6 +224,9 @@
 
         }
 
+        .beloeb {
+            margin-right: 0;
+        }
         .boks3 button {
             color: #FFF;
         }
@@ -221,21 +255,23 @@
     <main id="indhold">
 
         <form class="beregner">
-            <h1 class="beregner_h1">Låneberegner</h1>
+            <h1 class="beregner_h1">Beregn <span class="dit_laan">dit</span> lån</h1>
+
+            <div class="divider"></div>
+
+
 
             <div class="beregner_row">
                 <label for="laanebeloeb">Lånebeløb: <span class="beloeb"></span></label>
-                <br>
                 <input type="range" id="laanebeloeb" class="beregner_beloeb" min="5000" max="100000" value="5000" step="500">
             </div>
             <div class="beregner_row">
                 <label for="loebetid">Løbetid: <span class="tid"></span></label>
-                <br>
                 <input type="range" id="loebetid" class="beregner_tid" min="6" max="60" value="6" step="1">
             </div>
 
-            <div class="beregner_row">
-                <h2 class="beregner_info">Pris pr. måned: <span class="beregner_result"></span></h2>
+            <div class="beregner_row beregner_row3">
+                <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="beregner_result"></span><span class="result_kr"> kr.</span></span></h2>
                 <h2 class="beregner_info">Pris i alt: <span class="beregner_result_ialt"></span></h2>
             </div>
 
@@ -305,13 +341,12 @@
 
             document.querySelector(".beloeb").textContent = laaneBeloeb.value + " kr.";
             document.querySelector(".tid").textContent = laaneTid.value + " mdr.";
-            document.querySelector(".beregner_result").textContent = Math.round(result) + " kr.";
+            document.querySelector(".beregner_result").textContent = Math.round(result);
 
             document.querySelector(".beregner_result_ialt").textContent = Math.round(result) * period + " kr.";
 
 
         }
-
     </script>
 
 </body>
