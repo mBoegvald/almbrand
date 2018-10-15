@@ -58,9 +58,10 @@
             grid-row: span 3;
             background-color: var(--moerkeblaa);
             max-width: 100%;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             padding: 30px;
         }
+
 
         input {
             width: 100%;
@@ -86,12 +87,11 @@
             border-radius: 50%;
             border: 2px solid var(--almbrandlys);
             background: var(--lyseblaa);
-            cursor: pointer;
+            cursor: grab;
             margin-top: -6px;
             box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.9);
             position: relative;
             top: -5px;
-            cursor: grab;
 
         }
 
@@ -108,12 +108,13 @@
         .bokse {
             grid-row: span 3;
             display: grid;
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
         }
 
         .boks {
             grid-row: span 1;
             margin: 6px;
+            line-height: 1.6;
 
 
         }
@@ -130,6 +131,14 @@
 
         .boks3 {
             background: var(--moerkeblaa);
+        }
+        .boks4 {
+            background: var(--almbrandlys);
+        }
+
+        .headset {
+            margin: 10px 0;
+            max-height: 23px;
         }
 
         .beregner_h1 {
@@ -192,15 +201,33 @@
         .boksheader {
             font-size: 0.9em;
             margin: 10px auto;
+            text-transform:uppercase;
+            font-weight: 500;
         }
 
         .boksemne {
             font-size: 1.7em;
             font-family: Georgia, serif;
         }
+        .boksP {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 5px 15px;
+        }
 
-        .boks p {
-            padding: 0px 15px;
+
+        .liste {
+             list-style-position: outside;
+             padding: 5px 15px;
+            text-align: left;
+        }
+
+        .liste_container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .liste li {
+            margin: 5px 0;
         }
 
         .divider {
@@ -224,6 +251,10 @@
 
         }
 
+        .kontaktlink {
+            margin: 30px 0px;
+        }
+
         .beloeb {
             margin-right: 0;
         }
@@ -232,9 +263,24 @@
             color: #FFF;
         }
 
-        .button_div {
-            margin: 13px 0;
+        .button_container {
+            margin: 13px 0 17px 0;
         }
+        .pr_mdr {
+            font-family: Georgia, serif;
+            font-size: 2em;
+        }
+
+        .ialt {
+             font-family: Georgia, serif;
+            font-size: 2em;
+        }
+
+        .tlf {
+            font-family: Georgia, serif;
+            font-size: 2em;
+        }
+
     </style>
 
 </head>
@@ -273,9 +319,9 @@
             </div>
 
             <div class="beregner_row beregner_row3">
-                <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="beregner_result"></span><span class="result_kr"> kr.</span></span>
+                <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="pr_mdr"></span> kr.</span>
                 </h2>
-                <h2 class="beregner_info">Pris i alt: <span class="beregner_result_ialt"></span></h2>
+                <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span></h2>
             </div>
 
 
@@ -285,56 +331,67 @@
 
         <div class="bokse">
             <div class="boks boks1">
-                <h1 class="boksheader"> Tilmelding </h1>
-                <h2 class="boksemne"> Tilmelding til Ung+ konceptet</h2>
+                <h1 class="boksheader">Tilmelding </h1>
+                <h2 class="boksemne">Tilmelding til Ung+ konceptet</h2>
                 <div class="divider"></div>
                 <p class="boksP">
-
-
-
-
-                    En kunde mellem 18 og 32 år kan tilmelde sig Ung+ konceptet. Når kunden tilmelder sig Ung+ konceptet, vil de renteog gebyrfordele, der er forbundet med Ung+ konceptet, træde i kraft, når tilmeldingen er registreret og godkendt af Alm. Brand Bank, med mindre andet er skriftligt aftalt. Tilmeldingen sker ved at kunden underskriver Alm. Brand Banks ”Kundeaftale - Ung+”. Tilmeldingen gælder kun den enkelte kunde. Gebyr- og rentefordele Ung+ konceptet har en række rente og gebyrfordele, som kan ses på almbrand.dk.
-
+                    Alm. brand udbyder Ung+ til alle kunder mellem 18 og 32 år. Når kunden tilmelder sig Ung+ konceptet, vil de rente- og gebyrfordele, der er forbundet med Ung+ konceptet, træde i kraft, når tilmeldingen er registreret og godkendt af Alm. Brand Bank, med mindre andet er skriftligt aftalt. Tilmeldingen sker ved at kunden underskriver Alm. Brand Banks ”Kundeaftale - Ung+”.
                 </p>
-                <div class="button_div">
+                <div class="button_container">
                     <button class="boksButton">Klik her</button>
                 </div>
             </div>
             <div class="boks boks2">
-                <h1 class="boksheader">VILKÅR</h1>
-                <h2 class="boksemne"> Ung +</h2>
+                <h1 class="boksheader">Vilkår</h1>
+                <h2 class="boksemne"> Ung+</h2>
                 <div class="divider"></div>
-                <p class="boksP">
-
-                    <li>Alm. Brands Ung+ koncept er udviklet specielt til dig mellem 18-32 årige. </li>
-                    <li> Ung+ kunder bliver tilbudt en udlånsrente til 7%.</li>
-                    <li> Unge kan digitalt anmode om et forbrugslån på imellem 5-100.000 kr.og blive kreditvurderet inden for 1-2 hverdage.
-                    </li>
-                    <li>
-                        Bankens kundeservice ringer til ansøger og kreditvurderer over telefonen. Den unge ansøger inviteres eventuelt til møde i banken for at modtage yderligere rådgivning.</li>
-                    <li>Med en rente på kun 7% og en medfølgende god og tryg rådgivning, kan Alm. Brand udlåne til forbrug på de unges præmisser (digitalt) - og samtidigt stå inde for at den unge er i stand til at betale lånet tilbage på forsvarlig vis.</li>
-
-
-
-                </p>
-                <div class="button_div">
+                <div class="liste_container">
+                    <ul class="liste">
+                        <li>Ung+ til dig mellem 18-32 år.</li>
+                        <li>Udlånsrente på 7%.</li>
+                        <li>Mulighed for digital anmodning om forbrugslån på 5.000-100.000 kr.</li>
+                        <li>Gratis kreditvurdering og rådgivning over telefon inden for 1-2 hverdage.</li>
+                    </ul>
+                </div>
+                <div class="button_container">
                     <button class="boksButton">Klik her</button>
                 </div>
             </div>
             <div class="boks boks3">
-                <h1 class="boksheader">Lorem</h1>
+                <h1 class="boksheader">Bank</h1>
                 <h2 class="boksemne">Hvad vil du have råd til?</h2>
                 <div class="divider"></div>
                 <p class="boksP">
                     På en time giver vi dig overblik over din økonomi, så du kan bruge tiden på det, du elsker.
                 </p>
-                <div class="button_div">
+                <div class="button_container">
                     <button class="boksButton">Klik her</button>
+                </div>
+            </div>
+
+
+            <div class="boks boks4">
+                <img src="pics/headset.svg" alt="" class="headset">
+
+                <h2 class="boksemne">Kontakt os</h2>
+                <div class="divider"></div>
+                <div class="boksP">
+                    <h2 class="tlf">35 47 47 47</h2>
+                    <br>
+                    <p class="kontakt_tekst">Vi sidder klar til at hjælpe dig og besvare dine spørgsmål.</p>
+                    <div class="kontaktlink">
+                        <a href="https://www.almbrand.dk/kundeservice/kontakt/kontakt-os/">Kontakt os</a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
+
+
+    <footer>
+
+    </footer>
 
     <script>
         let PV, IR, NP, PMT;
@@ -359,13 +416,12 @@
 
             document.querySelector(".beloeb").textContent = laaneBeloeb.value + " kr.";
             document.querySelector(".tid").textContent = laaneTid.value + " mdr.";
-            document.querySelector(".beregner_result").textContent = Math.round(result);
+            document.querySelector(".pr_mdr").textContent = Math.round(result);
 
-            document.querySelector(".beregner_result_ialt").textContent = Math.round(result) * period + " kr.";
+            document.querySelector(".ialt").textContent = Math.round(result) * period;
 
 
         }
-
     </script>
 
 </body>
