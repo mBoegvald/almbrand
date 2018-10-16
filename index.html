@@ -29,6 +29,10 @@
 
         }
 
+        html {
+            height: 100%;
+        }
+
         /*Nav*/
 
         .logo_container img {
@@ -46,16 +50,22 @@
 
         /*INDHOLD*/
 
-        #indhold {
-            height: 100vh;
+        body {
+            min-height: 100%;
             display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(6, 1fr);
+            grid-template-rows: 1fr auto;
+        }
+
+        #indhold {
+/*            height: 100vh;*/
+           /* display: grid;*/
+           /* grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;*/
 
         }
 
         .beregner {
-            grid-row: span 4;
+
             background-color: var(--moerkeblaa);
             max-width: 100%;
             margin-bottom: 20px;
@@ -65,7 +75,7 @@
 
         input {
             width: 100%;
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         input[type=range] {
@@ -106,16 +116,17 @@
 
 
         .bokse {
-            grid-row: span 3;
             display: grid;
-            grid-template-rows: repeat(4, 1fr);
+            grid-template-rows: 1fr auto;
+
         }
 
         .boks {
             grid-row: span 1;
             margin: 6px;
             line-height: 1.6;
-
+            color: var(--moerkeblaa);
+            text-align: center;
 
         }
 
@@ -131,6 +142,7 @@
 
         .boks3 {
             background: var(--moerkeblaa);
+             color: white;
         }
         .boks4 {
             background: var(--almbrandlys);
@@ -145,7 +157,6 @@
             color: white;
             text-align: center;
             font-family: Georgia, serif;
-            font-size: 8.5vw;
             font-weight: 100;
             font-size: 3.5em;
 
@@ -188,16 +199,6 @@
             justify-content: space-between;
         }
 
-
-        .boks {
-            color: var(--moerkeblaa);
-            text-align: center;
-        }
-
-        .boks3 {
-            color: white;
-        }
-
         .boksheader {
             font-size: 0.9em;
             margin: 10px auto;
@@ -210,7 +211,7 @@
             font-family: Georgia, serif;
         }
         .boksP {
-            max-width: 80%;
+            max-width: 470px;
             margin: 0 auto;
             padding: 5px 15px;
         }
@@ -281,16 +282,74 @@
             font-size: 2em;
         }
 
-        footer {
-            background: var(--moerkeblaa);
-            display: flex;
-            justify-content: center;
-
-        }
-
         footer img {
             max-width: 40px;
+            margin: 20px 5px;
         }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            background-color: var(--moerkeblaa);
+        }
+
+
+        @media screen and (min-width:650px) {
+            .bokse {
+                grid-template-columns: 1fr 1fr;
+                max-width: 800px;
+                margin: 0 auto;
+
+            }
+
+            .beregner {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            #indhold {
+                align-items: center;
+            }
+
+            footer img {
+            margin: 20px 10px;
+        }
+        }
+        @media screen and (min-width:1000px) {
+
+            .bokse {
+                grid-template-columns: 1fr 1fr 1fr;
+                max-width: 1500px;
+            }
+             .beregner {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            .boks4 {
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+             .beregner_row {
+            max-width: 60%;
+            }
+            .beregner_h1 {
+                font-size: 4.5em;
+            }
+
+            label, .beregner_info {
+                font-size: 1.5em;
+            }
+
+            .boksP {
+                max-width: 390px;
+            }
+
+
+
+
+        }
+
 
     </style>
 
@@ -312,7 +371,6 @@
 
 
     <main id="indhold">
-
         <form class="beregner">
             <h1 class="beregner_h1">Beregn <span class="dit_laan">dit</span> lån</h1>
 
@@ -336,11 +394,13 @@
             </div>
 
 
-
-
         </form>
 
+
         <div class="bokse">
+
+
+
             <div class="boks boks1">
                 <h1 class="boksheader">Tilmelding </h1>
                 <h2 class="boksemne">Tilmelding til Ung+</h2>
@@ -349,7 +409,7 @@
                     Alm. brand udbyder Ung+ til alle kunder mellem 18 og 32 år. Når kunden tilmelder sig Ung+ konceptet, vil de rente- og gebyrfordele, der er forbundet med Ung+ konceptet, træde i kraft, når tilmeldingen er registreret og godkendt af Alm. Brand Bank, med mindre andet er skriftligt aftalt. Tilmeldingen sker ved at kunden underskriver Alm. Brand Banks ”Kundeaftale - Ung+”.
                 </p>
                 <div class="button_container">
-                    <button class="boksButton">Klik her</button>
+                    <button class="boksButton">Tilmeld dig her</button>
                 </div>
             </div>
             <div class="boks boks2">
@@ -365,7 +425,7 @@
                     </ul>
                 </div>
                 <div class="button_container">
-                    <button class="boksButton">Klik her</button>
+                    <button class="boksButton">Læs mere her</button>
                 </div>
             </div>
             <div class="boks boks3">
@@ -376,7 +436,7 @@
                     På en time giver vi dig overblik over din økonomi, så du kan bruge tiden på det, du elsker.
                 </p>
                 <div class="button_container">
-                    <button class="boksButton">Klik her</button>
+                    <button class="boksButton">Book et økonomitjek</button>
                 </div>
             </div>
 
@@ -399,10 +459,10 @@
         </div>
 
 
+
     </main>
 
     <footer>
-        FOOTER VIL IKKE NED I BUNDEN :((((((((((((((((()))))))))))))))))
         <div class="socials">
             <a href="https://www.facebook.com/almbrand" target="_blank">
                 <img src="pics/facebook_logo.svg" alt="Facebook logo">
