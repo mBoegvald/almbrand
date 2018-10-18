@@ -7,8 +7,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="jquery-pie-loader.js"></script>
+
+
 
 
     <style>
@@ -36,10 +38,59 @@
         /*Nav*/
 
         .logo_container img {
-            max-width: 70px;
+            max-width: 50px;
             margin: 6px 0;
             margin-left: 6px;
         }
+
+
+        /*        Pie chart*/
+
+        .svg-pie circle {
+            fill: #00768D;
+            stroke: var(--lyseblaa);
+        }
+
+        .svg-pie {
+            z-index: 1;
+            position: absolute;
+
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: none;
+            top: 10%;
+            left: calc(50% - 200px);
+
+        }
+
+        .svg-pie svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            transform: rotate(-90deg);
+        }
+
+        .svg-pie .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: Georgia, "serif";
+            font-size: 2rem;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .rendered.svg-pie {
+            background: none;
+        }
+
+        .rendered.svg-pie .percentage {
+            opacity: 1;
+        }
+
+
 
 
         /*INDHOLD*/
@@ -51,11 +102,10 @@
         }
 
         #indhold {
-/*            height: 100vh;*/
-           /* display: grid;*/
-           /* grid-template-columns: 1fr;
+            /*            height: 100vh;*/
+            /* display: grid;*/
+            /* grid-template-columns: 1fr;
             grid-template-rows: 1fr auto;*/
-
         }
 
         .beregner {
@@ -136,8 +186,9 @@
 
         .boks3 {
             background: var(--moerkeblaa);
-             color: white;
+            color: white;
         }
+
         .boks4 {
             background: var(--almbrandlys);
         }
@@ -196,7 +247,7 @@
         .boksheader {
             font-size: 0.9em;
             margin: 10px auto;
-            text-transform:uppercase;
+            text-transform: uppercase;
             font-weight: 500;
         }
 
@@ -204,6 +255,7 @@
             font-size: 1.7em;
             font-family: Georgia, serif;
         }
+
         .boksP {
             max-width: 470px;
             margin: 0 auto;
@@ -212,8 +264,8 @@
 
 
         .liste {
-             list-style-position: outside;
-             padding: 5px 15px;
+            list-style-position: outside;
+            padding: 5px 15px;
             text-align: left;
         }
 
@@ -221,6 +273,7 @@
             max-width: 80%;
             margin: 0 auto;
         }
+
         .liste li {
             margin: 5px 0;
         }
@@ -250,6 +303,7 @@
             margin: 30px 0px;
 
         }
+
         .kontaktlink a {
             color: var(--moerkeblaa);
         }
@@ -265,13 +319,14 @@
         .button_container {
             margin: 13px 0 17px 0;
         }
+
         .pr_mdr {
             font-family: Georgia, serif;
             font-size: 2em;
         }
 
         .ialt {
-             font-family: Georgia, serif;
+            font-family: Georgia, serif;
             font-size: 2em;
         }
 
@@ -291,14 +346,9 @@
             background-color: var(--moerkeblaa);
         }
 
-        .splash {
-            width: 100vw;
-        }
-
         .splash img {
-            width: 100%;
+            display: none;
         }
-
 
         @media screen and (min-width:650px) {
             .bokse {
@@ -308,57 +358,80 @@
 
             }
 
-            .beregner {
-                max-width: 60%;
-               position: absolute;
-            }
-
             #indhold {
                 align-items: center;
             }
 
             footer img {
-            margin: 30px 10px 40px;
-        }
-     }
-        @media screen and (min-width:1000px) {
-
-            .bokse {
-                grid-template-columns: 1fr 1fr 1fr;
-                max-width: 1500px;
+                margin: 30px 10px 40px;
             }
 
+            @media screen and (min-width:1000px) {
 
-            .boks4 {
-                grid-column-start: 1;
-                grid-column-end: 4;
+                .bokse {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    max-width: 1500px;
+                }
+
+                .boks4 {
+                    grid-column-start: 1;
+                    grid-column-end: 4;
+                }
+                .beregner_row {
+                    max-width: 60%;
+                }
+                .beregner_h1 {
+                    font-size: 4.5em;
+                }
+
+                label,
+                .beregner_info {
+                    font-size: 1.5em;
+                }
+
+                .boksP {
+                    max-width: 390px;
+                }
+                .splash_container {
+                    position: relative;
+                }
+
+                .splash {
+                    width: 100vw;
+                    position: relative;
+
+                }
+
+                .splash img {
+                    width: 100%;
+                    display: block;
+                }
+
+                .form_container {
+                    display: grid;
+                    position: absolute;
+                    width: 100%;
+                    top: 20%;
+
+                }
+
+                .beregner {
+                    margin: 0 auto;
+                    opacity: .7;
+                    width: 70%;
+                }
+
+
+
+
             }
-             .beregner_row {
-            max-width: 60%;
-            }
-            .beregner_h1 {
-                font-size: 4.5em;
-            }
-
-            label, .beregner_info {
-                font-size: 1.5em;
-            }
-
-            .boksP {
-                max-width: 390px;
-            }
-
-
-
-
-        }
-
-
     </style>
 
 </head>
 
 <body>
+
+
 
     <nav class="mobile_nav">
 
@@ -375,10 +448,14 @@
 
 
     <div class="splash_container">
+
         <div class="splash">
+            <div class="svg-pie"></div>
             <img src="pics/splash6.jpg" alt="">
             <div class="form_container">
                 <form class="beregner">
+
+
                     <h1 class="beregner_h1">Beregn <span class="dit_laan">dit</span> lån</h1>
 
                     <div class="divider"></div>
@@ -397,7 +474,8 @@
                     <div class="beregner_row beregner_row3">
                         <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="pr_mdr"></span> kr.</span>
                         </h2>
-                        <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span></h2>
+                        <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span>
+                        </h2>
                     </div>
 
 
@@ -500,8 +578,30 @@
         document.querySelector(".beloeb").textContent = laaneBeloeb.value + " kr.";
         document.querySelector(".tid").textContent = laaneTid.value + " mdr.";
 
+        function loadContent() {
+            document.addEventListener("DOMContentLoaded", start);
+            setTimeout(function() {
+                $(".svg-pie").css("display", "none");
+            }, 2500);
 
-        document.addEventListener("DOMContentLoaded", start);
+
+        };
+
+        $(".svg-pie").svgPie({
+
+            easing: 'easeOutCubic',
+
+
+            dimension: 400,
+
+            percentage: 50,
+
+            duration: 2000,
+
+            onComplete: loadContent(),
+
+            percentage: 100
+        });
 
         function start() {
             document.querySelector(".beregner_beloeb").addEventListener("input", calculation);
