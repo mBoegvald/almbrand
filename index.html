@@ -42,12 +42,6 @@
         }
 
 
-
-
-
-
-
-
         /*INDHOLD*/
 
         body {
@@ -254,6 +248,10 @@
 
         .kontaktlink {
             margin: 30px 0px;
+
+        }
+        .kontaktlink a {
+            color: var(--moerkeblaa);
         }
 
         .beloeb {
@@ -284,13 +282,21 @@
 
         footer img {
             max-width: 40px;
-            margin: 20px 5px;
+            margin: 30px 5px 20px;
         }
 
         footer {
             display: flex;
             justify-content: center;
             background-color: var(--moerkeblaa);
+        }
+
+        .splash {
+            width: 100vw;
+        }
+
+        .splash img {
+            width: 100%;
         }
 
 
@@ -303,8 +309,8 @@
             }
 
             .beregner {
-                grid-column-start: 1;
-                grid-column-end: 3;
+                max-width: 60%;
+               position: absolute;
             }
 
             #indhold {
@@ -312,19 +318,16 @@
             }
 
             footer img {
-            margin: 20px 10px;
+            margin: 30px 10px 40px;
         }
-        }
+     }
         @media screen and (min-width:1000px) {
 
             .bokse {
                 grid-template-columns: 1fr 1fr 1fr;
                 max-width: 1500px;
             }
-             .beregner {
-                grid-column-start: 1;
-                grid-column-end: 4;
-            }
+
 
             .boks4 {
                 grid-column-start: 1;
@@ -370,32 +373,39 @@
     </nav>
 
 
+
+    <div class="splash_container">
+        <div class="splash">
+            <img src="pics/splash6.jpg" alt="">
+            <div class="form_container">
+                <form class="beregner">
+                    <h1 class="beregner_h1">Beregn <span class="dit_laan">dit</span> lån</h1>
+
+                    <div class="divider"></div>
+
+
+
+                    <div class="beregner_row">
+                        <label for="laanebeloeb">Lånebeløb: <span class="beloeb"></span></label>
+                        <input type="range" id="laanebeloeb" class="beregner_beloeb" min="5000" max="100000" value="5000" step="500">
+                    </div>
+                    <div class="beregner_row">
+                        <label for="loebetid">Løbetid: <span class="tid"></span></label>
+                        <input type="range" id="loebetid" class="beregner_tid" min="6" max="60" value="6" step="1">
+                    </div>
+
+                    <div class="beregner_row beregner_row3">
+                        <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="pr_mdr"></span> kr.</span>
+                        </h2>
+                        <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span></h2>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
     <main id="indhold">
-        <form class="beregner">
-            <h1 class="beregner_h1">Beregn <span class="dit_laan">dit</span> lån</h1>
-
-            <div class="divider"></div>
-
-
-
-            <div class="beregner_row">
-                <label for="laanebeloeb">Lånebeløb: <span class="beloeb"></span></label>
-                <input type="range" id="laanebeloeb" class="beregner_beloeb" min="5000" max="100000" value="5000" step="500">
-            </div>
-            <div class="beregner_row">
-                <label for="loebetid">Løbetid: <span class="tid"></span></label>
-                <input type="range" id="loebetid" class="beregner_tid" min="6" max="60" value="6" step="1">
-            </div>
-
-            <div class="beregner_row beregner_row3">
-                <h2 class="beregner_info">Pris pr. måned: <span class="result_samlet"><span class="pr_mdr"></span> kr.</span>
-                </h2>
-                <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span></h2>
-            </div>
-
-
-        </form>
-
 
         <div class="bokse">
 
