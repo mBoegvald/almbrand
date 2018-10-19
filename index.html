@@ -7,11 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="jquery-pie-loader.js"></script>
-
-
-
 
     <style>
         :root {
@@ -44,67 +39,27 @@
         }
         .nav_container {
             display: flex;
+            width: 100%;
+
         }
         .menu {
-            margin: 20px;
-            align-content: flex-end;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+
         }
         nav a {
-                color: var(--moerkeblaa);
-    text-decoration: none;
-    padding: 20px;
-            paddin
-    font-family: 'Work Sans', sans-serif;
-    cursor: pointer;
+            color: var(--moerkeblaa);
+            text-decoration: none;
+            padding: 20px;
+            font-family: 'Work Sans', sans-serif;
+            cursor: pointer;
+            margin: 0 20px;
+            transition: .2s;
         }
-
-
-        /*        Pie chart*/
-
-        .svg-pie circle {
-            fill: #00768D;
-            stroke: var(--lyseblaa);
+        nav a:hover {
+            color: var(--lyseblaa);
         }
-
-        .svg-pie {
-            z-index: 1;
-            position: absolute;
-
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 50%;
-            box-shadow: none;
-            top: 10%;
-            left: calc(50% - 200px);
-
-        }
-
-        .svg-pie svg {
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-            transform: rotate(-90deg);
-        }
-
-        .svg-pie .percentage {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            font-family: Georgia, "serif";
-            font-size: 2rem;
-            opacity: 0;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
-
-        .rendered.svg-pie {
-            background: none;
-        }
-
-        .rendered.svg-pie .percentage {
-            opacity: 1;
-        }
-
 
 
 
@@ -116,19 +71,18 @@
             grid-template-rows: 1fr auto;
         }
 
-        #indhold {
-            /*            height: 100vh;*/
-            /* display: grid;*/
-            /* grid-template-columns: 1fr;
-            grid-template-rows: 1fr auto;*/
-        }
+
+
+        /*Beregner*/
+
+
 
         .beregner {
 
             background-color: var(--moerkeblaa);
             max-width: 100%;
             margin-bottom: 20px;
-            padding: 30px;
+            padding: 30px 0 0;
         }
 
 
@@ -173,6 +127,55 @@
             box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.9);
         }
 
+         .beregner_h1 {
+            color: white;
+            text-align: center;
+            font-family: Georgia, serif;
+            font-weight: 100;
+            font-size: 3.5em;
+
+        }
+
+        .dit_laan {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-weight: 200;
+            color: var(--lyseblaa);
+        }
+
+        label {
+            color: white;
+        }
+
+        .beregner_info {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 0.9em;
+            margin: 25px 0;
+        }
+
+        .beregner_row {
+            max-width: 80%;
+            margin: 10px auto;
+        }
+
+        .beregner_row3 {
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding-bottom: 17px;
+        }
+
+        .beregner_row label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        /* SLUT */
+
+
+
 
         .bokse {
             display: grid;
@@ -213,51 +216,7 @@
             max-height: 40px;
         }
 
-        .beregner_h1 {
-            color: white;
-            text-align: center;
-            font-family: Georgia, serif;
-            font-weight: 100;
-            font-size: 3.5em;
 
-        }
-
-        .dit_laan {
-            font-family: Georgia, serif;
-            font-style: italic;
-            font-weight: 200;
-            color: var(--lyseblaa);
-        }
-
-        label {
-            color: white;
-        }
-
-        .beregner_info {
-            display: flex;
-            justify-content: space-between;
-            color: white;
-            font-size: 0.9em;
-            margin: 5px 0;
-        }
-
-        .beregner_row {
-            max-width: 80%;
-            margin: 10px auto;
-        }
-
-        .beregner_row3 {
-            margin-top: 20px;
-        }
-
-        .beregner_info {
-            margin: 25px 0;
-        }
-
-        .beregner_row label {
-            display: flex;
-            justify-content: space-between;
-        }
 
         .boksheader {
             font-size: 0.9em;
@@ -310,10 +269,28 @@
             min-width: 125px;
             padding: 0 30px;
             font-size: 16px;
+            cursor: pointer;
+            transition: .4s;
 
 
         }
 
+        .boksButton:hover {
+            background-color: #0569ba;
+        }
+
+
+        .beregner_row3 .button_container {
+            display:flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .beregner_row3 button {
+            color: white;
+            margin:
+
+        }
         .kontaktlink {
             margin: 30px 0px;
 
@@ -333,6 +310,7 @@
 
         .button_container {
             margin: 13px 0 17px 0;
+
         }
 
         .pr_mdr {
@@ -365,99 +343,81 @@
             display: none;
         }
 
-        .kontakt_mig {
-                    width: 130px;
-                    height: 35px;
-
-        border: 3px solid var(--almbrandlys);
-            background: var(--lyseblaa);
-            color: var(--almbrandlys);
-
-
-              }
-
-        .kontakt_mig:hover {
-            opacity: 1;
-        }
-          #modal {
-        background-color: rgba(3, 40, 70, 0.87);
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        text-align: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: 1s;
-        top: 0;
-        z-index: 1;
-        color: white;
+        #modal {
+                background-color: rgba(3, 40, 70, 0.95);
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                text-align: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: 1s;
+                top: 0;
+                z-index: 1;
+                color: white;
+                padding-top: 20vw;
     }
-             #modal.vis {
-        opacity: 1;
-        pointer-events: all;
-        transition: 0.5s;
+
+
+        #modal.vis {
+                opacity: 1;
+                pointer-events: all;
+                transition: 0.5s;
     }
+
+
         #modal h3 {
+
                 font-size: 1.5em;
                 text-align: left;
-                }
-        #modal {
-            width: 100%;
-
+            font-family: Georgia, serif;
+            font-weight: normal;
         }
 
         #modal .kontakt_form {
-            width: 70%;
-            margin: 0 auto;
-                }
+                width: 70%;
+                margin: 0 auto;
+        }
+
         #modal ul {
-            padding: 0;
-            margin: 0;
+                padding: 0;
+                margin: 0;
         }
+
+
         #modal li {
-            list-style-type: none;
-            width: 100%;
+                margin: 20px 0;
+                list-style-type: none;
+                width: 100%;
         }
+
+
         #modal input {
-            margin: 5px 0 10px;
-            border: none;
-            background-color: transparent;
-            border-bottom-style: solid;
-            border-bottom-width: 2px;
-            border-bottom-color: white;
-            color: white;
-            font-size: 1.2em;
-            font-family: 'Work Sans', sans-serif;
+                padding-bottom: 5px;
+                margin: 7px 0 10px;
+                border: none;
+                background-color: transparent;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-bottom-color: white;
+                color: white;
+                font-size: 1.1em;
+                font-family: 'Work Sans', sans-serif;
+
 
         }
-        .close {
-        width: 15%;
-        height: 5%;
-        cursor: pointer;
-        margin: 20vh auto 20px auto;
-        transition: .4s;
-        border: 6px solid #a2daf4;
-        color: #fff;
-        background-color: #00b9ea;
-        border-radius: 2em;
-        max-width: 100px;
-        font-size: 1.1em;
-        cursor: pointer;
-    }
-              #modal .modal_submit {
-        cursor: pointer;
-        transition: .4s;
-        border: 6px solid #a2daf4;
-    color: #fff;
-    background-color: #00b9ea;
-    border-radius: 2em;
-    max-width: 100px;
-    font-size: 1.1em;
-    cursor: pointer;
-                }
 
 
-        @media screen and (min-width:650px) {
+
+        #modal button {
+                margin: 20px auto;
+                color: white;
+        }
+
+
+
+@media screen and (min-width:650px) {
+
             .bokse {
                 grid-template-columns: 1fr 1fr;
                 max-width: 800px;
@@ -472,9 +432,31 @@
             footer img {
                 margin: 30px 10px 40px;
             }
+            .beregner_row3 .button_container {
+
+                justify-content: flex-start;
+
         }
 
-            @media screen and (min-width:1000px) {
+            #modal {
+                padding-top: 15vw;
+    }
+
+
+             #modal .kontakt_form {
+                max-width: 450px;
+        }
+
+
+}
+
+
+
+
+@media screen and (min-width:1045px) {
+
+
+
 
                 .bokse {
                     grid-template-columns: 1fr 1fr 1fr;
@@ -505,7 +487,6 @@
                 }
 
                 .splash {
-                    width: 100vw;
                     position: relative;
 
                 }
@@ -519,7 +500,7 @@
                     display: grid;
                     position: absolute;
                     width: 100%;
-                    top: 20%;
+                    top: 0%;
 
                 }
 
@@ -528,81 +509,43 @@
                     opacity: .7;
                     width: 70%;
                 }
-                  .kontakt_mig {
-                    width: 20%;
-                    height: 2vw;
 
-        border: 3px solid var(--almbrandlys);
-            background: var(--lyseblaa);
-            color: var(--almbrandlys);
-
-
-              }
-                #modal .modal_submit {
-        cursor: pointer;
-
-        transition: .4s;
-        border: 6px solid #a2daf4;
-    color: #fff;
-    background-color: #00b9ea;
-    border-radius: 2em;
-    max-width: 100px;
-    font-size: 1.1em;
-    cursor: pointer;
-                }
-        #modal {
-            width: 100%;
-
-        }
-
-        #modal .kontakt_form {
-            width: 10%;
-            margin: 0 auto;
-                }
-        #modal ul {
-            padding: 0;
-            margin: 0;
-        }
-        #modal li {
-            list-style-type: none;
-            width: 100%;
-        }
-        #modal input {
-            margin: 5px 0 10px;
-            border: none;
-            background-color: transparent;
-            border-bottom-style: solid;
-            border-bottom-width: 2px;
-            border-bottom-color: white;
-            color: white;
-            font-size: 1.2em;
-            font-family: 'Work Sans', sans-serif;
-
-        }
-        .close {
-        width: 10%;
-        height: 5%;
-        cursor: pointer;
-        margin: 20vh auto 0 auto;
-        transition: .4s;
-        border: 6px solid #a2daf4;
-        color: #fff;
-        background-color: #00b9ea;
-        border-radius: 2em;
-        max-width: 100px;
-        font-size: 1.1em;
-        cursor: pointer;
+      #modal {
+                padding-top: 13vw;
     }
 
 
-                #modal h3 {
-                font-size: 1.5em;
-                text-align: left;
-                }
 
+}
 
+        @media screen and (min-width:1150px) {
+
+        .form_container {
+                top: 10%;
             }
 
+            #modal input {
+
+                font-size: 1.2em;
+            }
+            #modal h3 {
+                font-size: 1.7em;
+            }
+              #modal {
+                padding-top: 10vw;
+    }
+        }
+
+        @media screen and (min-width:1400px) {
+
+            .form_container {
+                top: 20%;
+            }
+              #modal {
+                padding-top: 5vw;
+            }
+
+        }
 
 
 
@@ -617,7 +560,7 @@
     <section id="modal">
 
 
-        <button class="close">&#10006;</button>
+        <button class="boksButton" id="close">&#10006;</button>
 
 
         <div id="modal_content">
@@ -625,19 +568,19 @@
                 <ul class="kontakt_form">
 
                     <li>
-                        <h3>Navn:</h3>
-                        <input type="text" name="name" class="name" placeholder="Navn">
+                        <h3>Fulde navn:</h3>
+                        <input type="text" name="name" class="name" placeholder="Indtast dit fulde navn her">
                     </li>
                     <li>
                         <h3>Mobil:</h3>
-                        <input type="tel" name="tel" class="tel" placeholder="Dit mobilnummer">
+                        <input type="tel" name="tel" class="tel" placeholder="Indtast dit mobilnummer her">
                     <li>
                         <h3>Email:</h3>
-                        <input type="email" name="email" class="email" placeholder="Din email">
+                        <input type="email" name="email" class="email" placeholder="Indtast din email her">
                     </li>
 
                     <li class="modal_send">
-                        <input type="button" class="modal_submit" value="Send">
+                        <button type="button" class="boksButton" id="modal_submit">Send</button>
                     </li>
                 </ul>
             </form>
@@ -670,7 +613,6 @@
     <div class="splash_container">
 
         <div class="splash">
-            <div class="svg-pie"></div>
             <img src="pics/splash6.jpg" alt="">
             <div class="form_container">
                 <form class="beregner">
@@ -696,7 +638,9 @@
                         </h2>
                         <h2 class="beregner_info">Pris i alt: <span class="result_samlet"><span class="ialt"></span> kr.</span>
                         </h2>
-                        <input type="button" class="kontakt_mig" value="Kontakt mig">
+                        <div class="button_container">
+                            <button type="button" class="boksButton" id="kontakt_mig">Kontakt mig</button>
+                        </div>
                     </div>
 
 
@@ -802,42 +746,17 @@
         document.querySelector(".beloeb").textContent = laaneBeloeb.value + " kr.";
         document.querySelector(".tid").textContent = laaneTid.value + " mdr.";
 
-        document.querySelector(".kontakt_mig").addEventListener("click", visModal);
 
 
-        document.addEventListener("DOMContentLoaded", pieChart);
-
-        function pieChart() {
-            $(".svg-pie").svgPie({
-
-                easing: 'easeOutCubic',
-
-
-                dimension: 400,
-
-                percentage: 50,
-
-                duration: 2000,
-
-                onComplete: start(),
-
-                percentage: 100
-            });
-
-            setTimeout(function() {
-                $(".svg-pie").css("display", "none");
-            }, 2500);
-
-
-        };
-
+        document.addEventListener("DOMContentLoaded", start);
 
 
 
         function visModal() {
             modal.classList.add("vis");
-            document.querySelector(".close").addEventListener("click", skjulModal);
-            document.querySelector(".modal_submit").addEventListener("click", skjulModal);
+            document.querySelector("#close").addEventListener("click", skjulModal);
+            document.querySelector("#modal_submit").addEventListener("click", skjulModal);
+            console.log("Hej");
         }
 
         function skjulModal() {
@@ -848,6 +767,9 @@
         function start() {
             document.querySelector(".beregner_beloeb").addEventListener("input", calculation);
             document.querySelector(".beregner_tid").addEventListener("input", calculation);
+            document.querySelector("#kontakt_mig").addEventListener("click", visModal);
+            console.log("Hello");
+
         }
 
         function calculation() {
